@@ -5,13 +5,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.service.UserService;
-import com.sun.mail.iap.Response;
 import com.vo.User;
 @Controller
 public class UserController {
@@ -102,10 +99,12 @@ public class UserController {
 	public String regist(User user){
 		System.out.println(user.getEmail());
 		
+//		System.out.println("11");
+		
 		return "qqq";
 	}
 
-
+	  
 
 
 
