@@ -1,11 +1,12 @@
 package com.service;
 
 import javax.annotation.Resource;
-
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.mapper.UserMapper;
+import com.util.MailUtil;
+import com.util.UUIDUtil;
 import com.vo.User;
 
 @Service
@@ -13,6 +14,9 @@ import com.vo.User;
 public class UserServiceImpl implements UserService{
 	@Resource
     public UserMapper userMapper;
+	HttpSession session;
+	
+	
 	/**
 	 * 通过用户名查询
 	 */
@@ -21,6 +25,24 @@ public class UserServiceImpl implements UserService{
 		return user;
 	}
 	
-
+	/*
+	 * 将随机校验码通过邮件发送
+	 */
+	public String toCheckCode(User user) {
+		UUIDUtil uuid =new UUIDUtil();
+		String code =uuid.getUUID();
+		MailUtil.sendMail(user.getEmail(), code);
+		return code;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 

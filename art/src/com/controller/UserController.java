@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.service.UserService;
 import com.vo.User;
 @Controller
@@ -75,10 +76,7 @@ public class UserController {
 	}
 
 	/*
-	 * 实现用户注册功能
-	 * 1.先校验用户名是否存在
-	 * 2.填写邮件验证码
-	 * 3.将注册信息插入数据库
+	 * 检查用户名是否存在
 	 */
 	@RequestMapping("checkUsername")
 	@ResponseBody
@@ -93,18 +91,25 @@ public class UserController {
 	}
 	
 	/*
-	 * 实现用户注册功能
+	 *通过邮件发送检验码
 	 */
 	@RequestMapping("regist")
-	public String regist(User user){
-		System.out.println(user.getEmail());
+	public String regist(User user,HttpServletRequest req){
+		String code= userService.toCheckCode(user);
+		System.out.println("检验码:"+code);
+		//设置用户信息
+		user.setEmail(user.getEmail());
+		user.setUsername(user.getUsername());
+		user.setPassword(user.getPassword());
+		user.setUsername(user.getUsername());
+		user.setCode(code);
+		//还没存完
 		
-//		System.out.println("11");
 		
-		return "qqq";
-	}
+		req.getSession().setAttribute("user", user);
 
-	  
+		return "to_checkCode";
+	}
 
 
 
