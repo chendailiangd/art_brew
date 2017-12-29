@@ -93,27 +93,23 @@ public class UserController {
 	/*
 	 *通过邮件发送检验码
 	 */
-	@RequestMapping("regist")
-	public String regist(User user,HttpServletRequest req){
-		String code= userService.toCheckCode(user);
-		System.out.println("检验码:"+code);
-		//设置用户信息
-		user.setEmail(user.getEmail());
-		user.setUsername(user.getUsername());
-		user.setPassword(user.getPassword());
-		user.setUsername(user.getUsername());
-		user.setCode(code);
-		//还没存完
-		
-		
-		req.getSession().setAttribute("user", user);
-
-		return "to_checkCode";
+	@RequestMapping("sendMail")
+	public void sendMail(String email,HttpServletRequest req){
+		System.out.println(email);
+		String code =userService.sendMail(email);
+		System.out.println(code);
+		req.getSession().setAttribute("code", code);
 	}
 
-
-
-
+	/*
+	 * 注册，将表单提交过来的数据插入数据库
+	 */
+	@RequestMapping("regist")
+	public void regist(User user,HttpServletRequest req){
+		String code=req.getSession().getAttribute("code").toString();
+		System.out.println("111"+code);
+		
+	}
 
 
 

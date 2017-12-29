@@ -3,8 +3,7 @@ import com.vo.User;
 
 	public interface UserService {
 		User findByUsername(String username);
-
-		String toCheckCode(User user);
+		String sendMail(String email);
 		
 		
 	}

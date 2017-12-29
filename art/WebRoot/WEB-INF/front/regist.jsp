@@ -4,7 +4,7 @@
  <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Minimal and Clean Sign up / Login and Forgot Form by FreeHTML5.co</title>
+	<title>注册</title>
 	<link rel="shortcut icon" href="favicon.ico">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/login_css/bootstrap.min.css">
@@ -64,6 +64,27 @@
 		
 	}
 	
+	function sendMail(){
+		var email = document.getElementById("email").value;
+		$.post("${pageContext.request.contextPath}/sendMail.do?email="+email);
+		var wait=5; 
+		function time(o) { 
+       	 	if (wait == 0) { 
+            o.removeAttribute("disabled");           
+            o.value="免费获取验证码"; 
+            wait = 5; 
+        } else { 
+            o.setAttribute("disabled", true); 
+            o.value=wait+"秒后可以重新发送"; 
+            wait--; 
+            setTimeout(function() { 
+                time(o) 
+            }, 
+            1000) 
+        } 
+    } 
+document.getElementById("btn").onclick=function(){time(this);} 
+}
 	</script>
 	
 	
@@ -75,7 +96,7 @@
 					
 
 					<!-- Start Sign In Form -->
-<form action="${pageContext.request.contextPath }/regist..do" method="post" onsubmit="return checkForm()"
+<form action="${pageContext.request.contextPath }/regist.do" method="post" onsubmit="return checkForm()"
  class="fh5co-form animate-box" data-animate-effect="fadeInRight">
 						<h2>Sign Up</h2>
 						<div class="form-group">
@@ -98,7 +119,8 @@
 							<input type="password" class="form-control" id="repassword" name="repassword" placeholder="Re-type Password" autocomplete="off">
 						</div>
 						<div class="form-group">
-							<label for="remember"><input type="checkbox" id="remember"> Remember Me</label>
+							<input type="text" value="验证码" id="code" name="code" style="width:80px" />
+							<input type="button" id="btn" value="获取验证码" onclick="sendMail()"/>
 						</div>
 						<div class="form-group">
 							<p>Already registered? <a href="index3.html">Sign In</a></p>
@@ -114,7 +136,19 @@
 			</div>
 			<div class="row" style="padding-top: 60px; clear: both;">
 				<div class="col-md-12 text-center"><p><small>&copy; All Rights Reserved. More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></small></p></div>
+			
 			</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	<!-- jQuery -->
 	<script src="${pageContext.request.contextPath}/js/login_js/jquery.min.js"></script>

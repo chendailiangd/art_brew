@@ -2,8 +2,10 @@ package com.service;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.mapper.UserMapper;
 import com.util.MailUtil;
 import com.util.UUIDUtil;
@@ -28,10 +30,10 @@ public class UserServiceImpl implements UserService{
 	/*
 	 * 将随机校验码通过邮件发送
 	 */
-	public String toCheckCode(User user) {
+	public String sendMail(String email) {
 		UUIDUtil uuid =new UUIDUtil();
 		String code =uuid.getUUID();
-		MailUtil.sendMail(user.getEmail(), code);
+		MailUtil.sendMail(email, code);
 		return code;
 	}
 	
