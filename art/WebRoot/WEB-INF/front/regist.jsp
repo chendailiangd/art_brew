@@ -100,11 +100,11 @@ document.getElementById("btn").onclick=function(){time(this);}
  class="fh5co-form animate-box" data-animate-effect="fadeInRight">
 						<h2>Sign Up</h2>
 						<div class="form-group">
-							<div class="alert alert-success" id="msg" role="alert">请准确填写信息</div>
+							<div class="alert alert-success" id="msg" role="alert">请准确填写信息 ${msg } </div>
 						</div>
 						<div class="form-group">
-							<label for="name" class="sr-only">用户名</label>
-							<input type="text" class="form-control" id="username" name="usernane" placeholder="Name" autocomplete="off" onblur="checkUsername()">
+							<label for="username" class="sr-only">用户名</label>
+							<input type="text" class="form-control" id="username" name="username" placeholder="usernmae" autocomplete="off" onblur="checkUsername()">
 						</div>
 						<div class="form-group">
 							<label for="email" class="sr-only">Email</label>
@@ -112,14 +112,14 @@ document.getElementById("btn").onclick=function(){time(this);}
 						</div>
 						<div class="form-group">
 							<label for="password" class="sr-only">Password</label>
-							<input type="password" class="form-control" id="password" name="passwoerd" placeholder="Password" autocomplete="off">
+							<input type="password" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off">
 						</div>
 						<div class="form-group">
 							<label for="re-password" class="sr-only">Re-type Password</label>
 							<input type="password" class="form-control" id="repassword" name="repassword" placeholder="Re-type Password" autocomplete="off">
 						</div>
 						<div class="form-group">
-							<input type="text" value="验证码" id="code" name="code" style="width:80px" />
+							<input type="text" value="验证码" id="active_code" name="active_code" style="width:80px" />
 							<input type="button" id="btn" value="获取验证码" onclick="sendMail()"/>
 						</div>
 						<div class="form-group">

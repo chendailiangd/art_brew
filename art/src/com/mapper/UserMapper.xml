@@ -5,8 +5,11 @@
     <select id="findByUsername" resultType="com.vo.User" >
     	select * from brew_user where username=#{username}
     </select>
-  
-  
+  	
+  	<insert id="saveRegistUser" parameterType="com.vo.User">
+  		insert into brew_user (username,password,email,active_code,regist_time,user_role,user_status) values 
+  		(#{username},#{password},#{email},#{active_code},#{regist_time},#{user_role},#{user_status})
+  	</insert>
     
 </mapper>
 

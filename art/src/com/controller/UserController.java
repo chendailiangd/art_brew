@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -37,11 +38,11 @@ public class UserController {
 		 		mv.addObject("pmsg", "你傻啊，密码都记不住！");
 			 	mv.setViewName("login");
 			 	return mv;
-		 	} else if(!existUser.getStatus().equals("01")){//01代表已激活的用户
+		 	} else if(!existUser.getUser_status().equals("01")){//01代表已激活的用户
 		 		mv.addObject("smsg", "你还未激活！");
 			 	mv.setViewName("login");
 			 	return mv;
-		 	}else if(existUser.getRole().equals("02")){//01代表管理员帐号，02代表普通用户
+		 	}else if(existUser.getUser_role().equals("02")){//01代表管理员帐号，02代表普通用户
 		 		mv.addObject("existUser", existUser);
 		 		mv.setViewName("index");
 		 		return mv;
@@ -103,11 +104,25 @@ public class UserController {
 
 	/*
 	 * 注册，将表单提交过来的数据插入数据库
+	 * 1.首先判断用户输入的code是否等于系统生成的code
+	 * 2.如果等于则往数据库插入信息，跳转至注册成功页面
+	 * 3.如果不相等，等提示用户验证码输入错误
 	 */
 	@RequestMapping("regist")
-	public void regist(User user,HttpServletRequest req){
-		String code=req.getSession().getAttribute("code").toString();
-		System.out.println("111"+code);
+	public String regist(User user,HttpServletRequest req,ModelMap model){
+		//这个code是由系统生生的code
+		String systemCode=req.getSession().getAttribute("code").toString();
+		
+		System.out.println(user.getPassword()+"ppppppppppppp");
+		
+		if(user.getActive_code().equals(systemCode)){
+			//从表单提交过来的数据包括username,code,email,password
+			userService.saveUser(user);
+			return "regist_success";
+		}else{
+			model.addAttribute("msg", "验证码输入错误！");
+			return "regist";//填写注册信息的页面叫regist.jsp
+		}
 		
 	}
 

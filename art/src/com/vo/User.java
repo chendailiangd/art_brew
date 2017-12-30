@@ -1,26 +1,17 @@
 package com.vo;
-
-import java.util.Date;
-
 public class User {
 	private int uid;
 	private String username;
 	private String password;
 	private String email;
 	private String nickname;
-	private String status;
-	private Date regist_time;
+	private String user_status;
+	private String regist_time;
 	private int oid;
 	private String adress;
 	private String phone;
-	private String role;
-	private String code;
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String user_role;
+	private String active_code;
 	public int getUid() {
 		return uid;
 	}
@@ -51,20 +42,15 @@ public class User {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	public Date getRegist_time() {
-		return regist_time;
-	}
-	public void setRegist_time(Date regist_time) {
-		this.regist_time = regist_time;
-	}
+	
 	public int getOid() {
 		return oid;
+	}
+	public String getRegist_time() {
+		return regist_time;
+	}
+	public void setRegist_time(String regist_time) {
+		this.regist_time = regist_time;
 	}
 	public void setOid(int oid) {
 		this.oid = oid;
@@ -81,12 +67,25 @@ public class User {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getRole() {
-		return role;
+	public String getUser_status() {
+		return user_status;
 	}
-	public void setRole(String role) {
-		this.role = role;
+	public void setUser_status(String user_status) {
+		this.user_status = user_status;
 	}
+	public String getUser_role() {
+		return user_role;
+	}
+	public void setUser_role(String user_role) {
+		this.user_role = user_role;
+	}
+	public String getActive_code() {
+		return active_code;
+	}
+	public void setActive_code(String active_code) {
+		this.active_code = active_code;
+	}
+	
 	
 	
 	
