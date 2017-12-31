@@ -2,7 +2,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
  <head>
-	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>注册</title>
 	<link rel="shortcut icon" href="favicon.ico">
@@ -66,6 +65,12 @@
 	
 	function sendMail(){
 		var email = document.getElementById("email").value;
+		var active_code =document.getElementById("active_code").value;
+		if((email==""||email==null)&&(active_code==""||active_code==null)){
+			$("#msg").html("<span style='color:red'>"+"邮箱不能为空"+"</span>");
+			return false;
+		}else{
+		
 		$.post("${pageContext.request.contextPath}/sendMail.do?email="+email);
 		var wait=5; 
 		function time(o) { 
@@ -85,6 +90,12 @@
     } 
 document.getElementById("btn").onclick=function(){time(this);} 
 }
+		
+		
+		}
+		
+		
+		
 	</script>
 	
 	
@@ -100,11 +111,15 @@ document.getElementById("btn").onclick=function(){time(this);}
  class="fh5co-form animate-box" data-animate-effect="fadeInRight">
 						<h2>Sign Up</h2>
 						<div class="form-group">
-							<div class="alert alert-success" id="msg" role="alert">请准确填写信息 ${msg } </div>
+							<div class="alert alert-success" id="msg" role="alert">请准确填写信息 </div>
 						</div>
 						<div class="form-group">
 							<label for="username" class="sr-only">用户名</label>
 							<input type="text" class="form-control" id="username" name="username" placeholder="usernmae" autocomplete="off" onblur="checkUsername()">
+						</div>
+						<div class="form-group">
+							<label for="昵称" class="sr-only">用户名</label>
+							<input type="text" class="form-control" id="nickname" name="nickname" placeholder="nickname" autocomplete="off" onblur="checkUsername()">
 						</div>
 						<div class="form-group">
 							<label for="email" class="sr-only">Email</label>
@@ -119,7 +134,8 @@ document.getElementById("btn").onclick=function(){time(this);}
 							<input type="password" class="form-control" id="repassword" name="repassword" placeholder="Re-type Password" autocomplete="off">
 						</div>
 						<div class="form-group">
-							<input type="text" value="验证码" id="active_code" name="active_code" style="width:80px" />
+							<input type="text" placeholder="验证码" id="active_code" name="active_code" style="width:80px" />
+							<span style="color:red"> ${msg }</span>
 							<input type="button" id="btn" value="获取验证码" onclick="sendMail()"/>
 						</div>
 						<div class="form-group">
@@ -135,7 +151,7 @@ document.getElementById("btn").onclick=function(){time(this);}
 				</div>
 			</div>
 			<div class="row" style="padding-top: 60px; clear: both;">
-				<div class="col-md-12 text-center"><p><small>&copy; All Rights Reserved. More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></small></p></div>
+				<div class="col-md-12 text-center"><p><small>&copy; All Rights Reserved. More Templates <a href="#" target="_blank" title="艺术精酿">艺术精酿</a> - Collect from <a href="#" title="网页模板" target="_blank">艺术精酿</a></small></p></div>
 			
 			</div>
 	

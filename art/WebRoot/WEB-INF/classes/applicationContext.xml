@@ -11,13 +11,24 @@
         http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
     <!-- 1. 数据源 : DriverManagerDataSource -->
-    <context:property-placeholder location="classpath:db.properties"/>
+  <context:property-placeholder location="classpath:db.properties"/>
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/art_brew" />
         <property name="username" value="root" />
         <property name="password" value="123456" /> 
-    </bean>
+    </bean> 
+    
+	<!-- <context:property-placeholder location="classpath:jdbc.properties"/>
+	配置C3P0连接池:
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${driver}"/>
+		<property name="jdbcUrl" value="${jdbc.url}"/>
+		<property name="user" value="${jdbc.user}"/>
+		<property name="password" value="${jdbc.password}"/>
+	</bean>
+ -->
+
 
     <!--
         2. mybatis的SqlSession的工厂: SqlSessionFactoryBean dataSource:引用数据源

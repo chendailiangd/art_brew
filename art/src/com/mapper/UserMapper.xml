@@ -7,8 +7,8 @@
     </select>
   	
   	<insert id="saveRegistUser" parameterType="com.vo.User">
-  		insert into brew_user (username,password,email,active_code,regist_time,user_role,user_status) values 
-  		(#{username},#{password},#{email},#{active_code},#{regist_time},#{user_role},#{user_status})
+  		insert into brew_user (username,nickname,password,email,active_code,regist_time,user_role,user_status) values 
+  		(#{username},#{nickname},#{password},#{email},#{active_code},#{regist_time},#{user_role},#{user_status})
   	</insert>
     
 </mapper>

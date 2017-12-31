@@ -38,7 +38,7 @@ public class UserController {
 		 		mv.addObject("pmsg", "你傻啊，密码都记不住！");
 			 	mv.setViewName("login");
 			 	return mv;
-		 	} else if(!existUser.getUser_status().equals("01")){//01代表已激活的用户
+		 	} else if(!existUser.getUser_status().equals("02")){//01代表已激活的用户
 		 		mv.addObject("smsg", "你还未激活！");
 			 	mv.setViewName("login");
 			 	return mv;
@@ -112,9 +112,6 @@ public class UserController {
 	public String regist(User user,HttpServletRequest req,ModelMap model){
 		//这个code是由系统生生的code
 		String systemCode=req.getSession().getAttribute("code").toString();
-		
-		System.out.println(user.getPassword()+"ppppppppppppp");
-		
 		if(user.getActive_code().equals(systemCode)){
 			//从表单提交过来的数据包括username,code,email,password
 			userService.saveUser(user);

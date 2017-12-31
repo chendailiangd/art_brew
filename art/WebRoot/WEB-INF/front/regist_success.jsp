@@ -5,7 +5,7 @@
   </head>
   <body>
 <%@include file="header.jsp" %>
-	
+	<h3 style="color:green">注册成功，<a href ="${pageContext.request.contextPath }/to_login.do">点击这里进行登录</a></h3>
 
   </body>
 </html>

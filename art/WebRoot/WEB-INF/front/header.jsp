@@ -29,7 +29,6 @@
 	<header id="header">
 		
 		<!-- Section title -->
-		<h1 class="sr-only">Gonex | Home page</h1>
 		
 		<nav id="main-navigation" class="navbar navbar-default navbar-fixed-top">
 		  <!-- Section title -->
@@ -46,7 +45,7 @@
 		      </button>
 		      <a id="brand-mobile" class="navbar-brand navbar-brand-center smoothScroll" 
 		      href="${pageContext.request.contextPath }/index.do">
-		        <img alt="Gonex" src="${pageContext.request.contextPath}/img/svg/logo.svg">
+		        <img alt="Gonex" src="${pageContext.request.contextPath}/img/svg/logo.jpg">
 		      </a>
 		    </div>
 
@@ -72,11 +71,11 @@
 				</form>
 			  
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a class="smoothScroll" href="${pageContext.request.contextPath }/index.do">Home <span class="sr-only">(current)</span></a></li>
-					<li><a class="smoothScroll" href="#services">Services</a></li>
-					<li><a class="smoothScroll" href="#work">Work</a></li>
+					<li class="active"><a class="smoothScroll" href="${pageContext.request.contextPath }/index.do">首页 <span class="sr-only">(current)</span></a></li>
+					<li><a class="smoothScroll" href="#services">所有商品</a></li>
+					<li><a class="smoothScroll" href="#work">企业动态</a></li>
 					<li><a class="smoothScroll" href="#about">About us</a></li>
-					<li><a class="smoothScroll" href="#skills">Skills</a></li>
+					<li><a class="smoothScroll" href="#skills">关于我们</a></li>
 <c:choose>
 	<c:when test="${existUser==null}">
 		<li><a href="${pageContext.request.contextPath}/to_login.do ">登录/注册</a></li>
@@ -85,8 +84,8 @@
 		<li class="dropdown" id="accountmenu">
              <a class="dropdown-toggle" data-toggle="dropdown" href="#">${existUser.nickname }<b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                     <li><a href="#">1111111</a></li>
-                     <li><a href="#">MySQL</a></li>
+                     <li><a href="#">我的订单</a></li>
+                     <li><a href="#">购物车</a></li>
                      <li class="divider"></li>
                      <li><a href="${pageContext.request.contextPath }/exit.do">注销</a></li>
                 </ul>
