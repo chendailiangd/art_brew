@@ -491,9 +491,11 @@ HOME SECTION
 /**********************
 SERVICES SECTION
 ***********************/
-
+/*
+这里是调节新品高度
+*/
 #services {
-	padding: 115px 0;
+	padding: 20px 0;
 	text-align: center;
 }
 
@@ -533,11 +535,11 @@ SERVICES SECTION
 #services .punchline span:nth-of-type(3) {
 	font-size: 20px;
 	font-style: italic;
-	margin-top: 26px;
+	margin-top: 20px;
 }
 
 #services .service {
-	padding: 91px 45px 70px;
+	padding: 1px 1px 1px;
 	background: #f7f7f7;
 	cursor: pointer;
 	-moz-transition: background 0.3s ease-in-out;
@@ -547,7 +549,7 @@ SERVICES SECTION
 
 #services .service:hover {
 	color: #ffffff;
-	background: #56c553;
+	background: grey;
 }
 
 #services .service:hover h4,
@@ -570,6 +572,7 @@ SERVICES SECTION
 }
 
 #services .service .service-link {
+	margin-top: 0px;
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
 	display: inline-block;

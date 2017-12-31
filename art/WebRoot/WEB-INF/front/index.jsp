@@ -85,103 +85,40 @@
 			<h1 class="sr-only">Services</h1>
 
 			<div class="container">
+				
+<!-- 最新商品	 -->				
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="#">最新商品</a>
+	</div>
+	</div>
+</nav>
 
-				<div class="row">
-					
-					<div class="col-md-4">
-
-						<div class="punchbox">
-							
-							<h2 class="punchline">
-								<span>What we do</span>
-								<span>best</span>
-								<span>see it for yourself</span>
-							</h2>
-
-						</div> <!-- /.punchbox -->
-						
-					</div>
-
-					<div class="col-md-4">
-						
-						<div class="service">
-
-							<h4>Photography</h4>
-
-							<p>Nec feugiat ut neque odio quo, interdum, quis elit varius.</p>
-
-							<a href="#" class="service-link">See projects</a>
-
-						</div> <!-- /.service -->
-
-					</div>
-
-					<div class="col-md-4">
-						
-						<div class="service">
-
-							<h4>Graphic design</h4>
-
-							<p>Nec feugiat ut neque odio quo, interdum, quis elit varius.</p>
-
-							<a href="#" class="service-link">See projects</a>
-
-						</div> <!-- /.service -->
-
-					</div>
-
-				</div> <!-- /.row -->
-
-				<div class="row">
-					
-					<div class="col-md-4">
-						
-						<div class="service">
-
-							<h4>App development</h4>
-
-							<p>Nec feugiat ut neque odio quo, interdum, quis elit varius.</p>
-
-							<a href="#" class="service-link">See projects</a>
-
-						</div> <!-- /.service -->
-
-					</div>
-
-					<div class="col-md-4">
-						
-						<div class="service">
-
-							<h4>Programming</h4>
-
-							<p>Nec feugiat ut neque odio quo, interdum, quis elit varius.</p>
-
-							<a href="#" class="service-link">See projects</a>
-
-						</div> <!-- /.service -->
-
-					</div>
-
-					<div class="col-md-4">
-						
-						<div class="service">
-
-							<h4>Web coding</h4>
-
-							<p>Nec feugiat ut neque odio quo, interdum, quis elit varius.</p>
-
-							<a href="#" class="service-link">See projects</a>
-
-						</div> <!-- /.service -->
-
-					</div>
-
-				</div> <!-- /.row -->
-
-			</div> <!-- /.container -->
 			
-		</section>
+<table width="255" border="0" >
+  <tr  >
+    <td height="255" colspan="2">
+    <img alt=""  src="${pageContext.request.contextPath }/img/goods_img/c01.jpg "
+								style="width:250px;height:230px"/>
+	</td>
+  </tr>
+  <tr  >
+    <td colspan="2" ><p  class="row"> 描述</p></td>
+  </tr>
+  <tr>
+    <td width="117" height="40"  >单价:</td>
+    <td class="service" ><a href ="#" class="service-link"> 加购物车</a> </td>
+  </tr>
+</table>
 
+
+
+
+
+			
+
+<br/>
 		<section id="video">
 
 			<!-- Section title -->
