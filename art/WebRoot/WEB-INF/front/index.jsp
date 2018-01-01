@@ -1,6 +1,11 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
+<head>
+
+</head>
 <body>
 <%@include file="header.jsp" %>
 
@@ -95,28 +100,50 @@
 	</div>
 </nav>
 
-			
-<table width="255" border="0" >
-  <tr  >
-    <td height="255" colspan="2">
-    <img alt=""  src="${pageContext.request.contextPath }/img/goods_img/c01.jpg "
+<table width="200" border="0">
+
+  
+  <c:forEach items="${glist}" var="g"  varStatus="a">
+  <tr>
+    <td colspan="2"><img alt=""  src="${pageContext.request.contextPath }/img/goods_img/c01.jpg "
 								style="width:250px;height:230px"/>
 	</td>
-  </tr>
-  <tr  >
-    <td colspan="2" ><p  class="row"> 描述</p></td>
+	</tr>
+  <tr>
+    <td colspan="2" height="30">
+<a href="${pageContext.request.contextPath }/goods_detail.do?gid="+${g.gid}
+target="_blank""> ${g.goods_description }</a></td>
   </tr>
   <tr>
-    <td width="117" height="40"  >单价:</td>
-    <td class="service" ><a href ="#" class="service-link"> 加购物车</a> </td>
+    <td width="86" height="30">danjia:999</td>
+    <td width="98" height="30" class="service" >jcar</td>
+    
+   </tr> 
+    
+  
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
   </tr>
+   </c:forEach>
+  
 </table>
-
-
-
-
-
 			
+	
+	
+	
+	
+	
+	
+			
+
+
+
+
+
+
+
+	
 
 <br/>
 		<section id="video">

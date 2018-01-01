@@ -1,37 +1,45 @@
 package com.controller;
+import java.util.List;
+
+import javax.enterprise.inject.Model;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.service.GoodsService;
+import com.vo.Goods;
 
 @Controller
 public class IndexController {
+	@Autowired
+	public GoodsService goodsService;
+	
 	@RequestMapping("index.do")//跳转至首页
-	public String toIndex(){
+	public String toIndex(ModelMap model){
+		//查询最新商品
+		List<Goods> glist=goodsService.newGoods();
+		model.addAttribute("glist",glist);
+		//查询最火商品
+		
+		
 		return "index";
+	}
+	
+	/**
+	 *跳转到商品详情页面
+	 */
+	@RequestMapping("goods_detail.do")
+	public String goodsDetail(){
+		
+		return "goods_detail";
 	}
 	
 	
 	
 	
-	
-	
-	
-	
-//	    @Autowired
-//	    private UserService userService;
-//	    @RequestMapping("/hello.do")//地址栏访问hello.jsp，跳转到hello.do
-//	    public String find(int uid,ModelMap model)
-//	    {
-////	        int age=userService.findAge(uid);
-//	        System.out.println(age);//如果实验成功，在控制台会打印年龄23
-//	        
-////	        User user =userService.findByUid(uid);
-////	        System.out.println(user.getUsername()+" "+user.getUid());
-//	        
-////	        model.addAttribute("user",user);
-//	        model.addAttribute(user);
-//	        return "index";
-//	    }
-	
+
 	
 	
 	
