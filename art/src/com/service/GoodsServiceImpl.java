@@ -23,6 +23,12 @@ public class GoodsServiceImpl implements GoodsService{
 		List<Goods> glist =goodsMapper.findNewGoods();
 		return glist;
 	}
+
+	//通过gid查询单个商品详情
+	public Goods findByGid(int gid) {
+		Goods goods= goodsMapper.findByGid(gid);
+		return goods;
+	}
 	
 	
 	

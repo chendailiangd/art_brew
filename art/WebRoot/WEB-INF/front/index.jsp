@@ -101,31 +101,29 @@
 </nav>
 
 <table width="200" border="0">
-
-  
   <c:forEach items="${glist}" var="g"  varStatus="a">
-  <tr>
-    <td colspan="2"><img alt=""  src="${pageContext.request.contextPath }/img/goods_img/c01.jpg "
-								style="width:250px;height:230px"/>
-	</td>
+  	<tr>
+   	 	<td colspan="2"> <img alt=""  src="${pageContext.request.contextPath }/img/goods_img/c01.jpg " style="width:250px;height:230px" /> 
+		</td>
+		<td width="10" ></td>
 	</tr>
-  <tr>
-    <td colspan="2" height="30">
-<a href="${pageContext.request.contextPath }/goods_detail.do?gid="+${g.gid}
-target="_blank""> ${g.goods_description }</a></td>
-  </tr>
-  <tr>
-    <td width="86" height="30">danjia:999</td>
-    <td width="98" height="30" class="service" >jcar</td>
-    
-   </tr> 
+  	<tr>
+		<td><a href="${pageContext.request.contextPath }/goods_detail.do?gid=${g.gid}">${g.goods_description }</a></td>
+		<td width="10" ></td>
+  
+  	</tr>
+  	<tr>
+   		<td width="30" height="30">danjia:999</td>
+    	<td width="30" height="30" class="service" >car</td>
+   	</tr> 
+    		</c:forEach>
+ </table>  
     
   
-  <tr>
+  <!-- <tr>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-  </tr>
-   </c:forEach>
+  </tr> -->
   
 </table>
 			

@@ -79,22 +79,23 @@
 							</script>
 
 							<div class="tb-booth tb-pic tb-s310">
-								<a href="${pageContext.request.contextPath}/introduction/images/01.jpg"><img src="${pageContext.request.contextPath}/introduction/images/01_mid.jpg" alt="细节展示放大镜特效" rel="${pageContext.request.contextPath}/introduction/images/01.jpg" class="jqzoom" /></a>
+								<a href="${pageContext.request.contextPath}/img/goods_img/${goods.goods_cover_image}"><img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_cover_image}" alt="细节展示放大镜特效" rel="${pageContext.request.contextPath}/img/goods_img/${goods.goods_cover_image}" class="jqzoom" /></a>
 							</div>
 							<ul class="tb-thumb" id="thumblist">
 								<li class="tb-selected">
+								
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="${pageContext.request.contextPath}/introduction/images/01_small.jpg" mid="${pageContext.request.contextPath}/introduction/images/01_mid.jpg" big="${pageContext.request.contextPath}/introduction/images/01.jpg"></a>
+										<a href="#"><img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_cover_image}" mid="${pageContext.request.contextPath}/img/goods_img/${goods.goods_cover_image}" big="${pageContext.request.contextPath}/img/goods_img/${goods.goods_cover_image}"></a>
 									</div>
 								</li>
 								<li>
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="${pageContext.request.contextPath}/introduction/images/02_small.jpg" mid="${pageContext.request.contextPath}/introduction/images/02_mid.jpg" big="${pageContext.request.contextPath}/introduction/images/02.jpg"></a>
+										<a href="#"><img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image1}" mid="${pageContext.request.contextPath}/introduction/images/02_mid.jpg" big="${pageContext.request.contextPath}/introduction/images/02.jpg"></a>
 									</div>
 								</li>
 								<li>
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="${pageContext.request.contextPath}/introduction/images/03_small.jpg" mid="${pageContext.request.contextPath}/introduction/images/03_mid.jpg" big="${pageContext.request.contextPath}/introduction/images/03.jpg"></a>
+										<a href="#"><img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image2}" mid="${pageContext.request.contextPath}/introduction/images/03_mid.jpg" big="${pageContext.request.contextPath}/introduction/images/03.jpg"></a>
 									</div>
 								</li>
 							</ul>
@@ -109,7 +110,7 @@
 						<!--名称-->
 						<div class="tb-detail-hd">
 							<h1>	
-				 良品铺子 手剥松子218g 坚果炒货 巴西松子
+				${goods.goods_name }
 	          </h1>
 						</div>
 						<div class="tb-detail-list">
@@ -117,11 +118,11 @@
 							<div class="tb-detail-price">
 								<li class="price iteminfo_price">
 									<dt>促销价</dt>
-									<dd><em>¥</em><b class="sys_item_price">56.90</b>  </dd>                                 
+									<dd><em>¥</em><b class="sys_item_price">${goods.goods_brew_price }</b>  </dd>                                 
 								</li>
 								<li class="price iteminfo_mktprice">
 									<dt>原价</dt>
-									<dd><em>¥</em><b class="sys_item_mktprice">98.00</b></dd>									
+									<dd><em>¥</em><b class="sys_item_mktprice">${goods.goods_market_price }</b></dd>									
 								</li>
 								<div class="clear"></div>
 							</div>
@@ -239,7 +240,7 @@
 								<div class="hot">
 									<dt class="tb-metatit">店铺优惠</dt>
 									<div class="gold-list">
-										<p>购物满2件打8折，满3件7折<span>点击领券<i class="am-icon-sort-down"></i></span></p>
+										<p>${goods.goods_description }<span>点击领券<i class="am-icon-sort-down"></i></span></p>
 									</div>
 								</div>
 								<div class="clear"></div>
@@ -425,13 +426,13 @@
 											<h4>商品细节</h4>
 										</div>
 										<div class="twlistNews">
-											<img src="${pageContext.request.contextPath}/introduction/images/tw1.jpg" />
-											<img src="${pageContext.request.contextPath}/introduction/images/tw2.jpg" />
-											<img src="${pageContext.request.contextPath}/introduction/images/tw3.jpg" />
-											<img src="${pageContext.request.contextPath}/introduction/images/tw4.jpg" />
-											<img src="${pageContext.request.contextPath}/introduction/images/tw5.jpg" />
-											<img src="${pageContext.request.contextPath}/introduction/images/tw6.jpg" />
-											<img src="${pageContext.request.contextPath}/introduction/images/tw7.jpg" />
+											<img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_cover_image}" />
+											<img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image1}" />
+											<img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image2}" />
+											<img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image3}" />
+											<img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image4}" />
+											<img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image5}" />
+											<img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image6}" />
 										</div>
 									</div>
 									<div class="clear"></div>

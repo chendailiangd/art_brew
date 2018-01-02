@@ -5,5 +5,9 @@
 	<select id="findNewGoods" resultType="com.vo.Goods">
 		select * from brew_goods ORDER BY goods_publish_time limit 0,5
 	</select>
-
+	
+	<select id="findByGid" resultType="com.vo.Goods">
+		select * from brew_goods where gid =#{gid}
+	</select>
+	
 </mapper>
