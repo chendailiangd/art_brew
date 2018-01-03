@@ -3,28 +3,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+		
 		<title>商品页面</title>
-
-		<link href="${pageContext.request.contextPath}/introduction/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" />
-		<link href="${pageContext.request.contextPath}/introduction/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
 		<link href="${pageContext.request.contextPath}/introduction/basic/css/demo.css" rel="stylesheet" type="text/css" />
+    	<link href="${pageContext.request.contextPath}/introduction/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
 		<link type="text/css" href="${pageContext.request.contextPath}/introduction/css/optstyle.css" rel="stylesheet" />
 		<link type="text/css" href="${pageContext.request.contextPath}/introduction/css/style.css" rel="stylesheet" />
-
-		<script type="text/javascript" src="${pageContext.request.contextPath}/introduction/basic/js/jquery-1.7.min.js"></script>
+		
+	<script type="text/javascript" src="${pageContext.request.contextPath}/introduction/basic/js/jquery-1.7.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/introduction/basic/js/quick_links.js"></script>
 
 		<script type="text/javascript" src="${pageContext.request.contextPath}/introduction/AmazeUI-2.4.2/assets/js/amazeui.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/introduction/js/jquery.imagezoom.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/introduction/js/jquery.flexslider.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/introduction/js/list.js"></script>
-
 	</head>
-<%@include file="header.jsp" %>
+
+
+
 	<body>
+<%@include file="header.jsp" %>
+
 
 
 				<ol class="am-breadcrumb am-breadcrumb-slash">
@@ -48,7 +47,7 @@
 						<div class="flexslider">
 							<ul class="slides">
 								<li>
-									<img src="${pageContext.request.contextPath}/introduction/images/01.jpg" title="pic" />
+									<img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_cover_image}" title="pic" />
 								</li>
 								<li>
 									<img src="${pageContext.request.contextPath}/introduction/images/02.jpg" />
@@ -90,12 +89,12 @@
 								</li>
 								<li>
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image1}" mid="${pageContext.request.contextPath}/introduction/images/02_mid.jpg" big="${pageContext.request.contextPath}/introduction/images/02.jpg"></a>
+										<a href="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image1}"><img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image1}" mid="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image1}" big="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image1}"></a>
 									</div>
 								</li>
 								<li>
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image2}" mid="${pageContext.request.contextPath}/introduction/images/03_mid.jpg" big="${pageContext.request.contextPath}/introduction/images/03.jpg"></a>
+										<a href="#"><img src="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image2}" mid="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image2}" big="${pageContext.request.contextPath}/img/goods_img/${goods.goods_introduce_image2}"></a>
 									</div>
 								</li>
 							</ul>
@@ -270,7 +269,7 @@
 							</li>
 							<li>
 								<div class="clearfix tb-btn tb-btn-basket theme-login">
-									<a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
+									<a id="LikBasket" title="加入购物车" href="${pageContext.request.contextPath }/addCart.do" target="_blank"><i></i>加入购物车</a>
 								</div>
 							</li>
 						</div>
@@ -1268,6 +1267,11 @@
 					</div>
 				</div>
 			</div>
+
+
+
+	
+
 
 	</body>
 

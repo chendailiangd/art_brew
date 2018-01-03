@@ -27,9 +27,14 @@ public class GoodsController {
 		return "goods_detail";
 	}
 	
-	
-	
-	
+	/**
+	 *跳转到购物车页面
+	 */
+	@RequestMapping("addCart.do")
+	public String addCart(){
+		
+		return "addCart";
+	}
 	
 	
 	

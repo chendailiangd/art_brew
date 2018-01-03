@@ -2,6 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <head>
     <title>艺术精酿</title>
+    
     <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Fonts -->
@@ -12,6 +13,7 @@
     <link rel="stylesheet" type="text/css"  href="${pageContext.request.contextPath}/css/gonex-icons.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 	<link href="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />	
+
 		<!-- Scripts -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/libs/smooth-scroll.min.js"></script>
@@ -85,7 +87,7 @@
              <a class="dropdown-toggle" data-toggle="dropdown" href="#">${existUser.nickname }<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                      <li><a href="#">我的订单</a></li>
-                     <li><a href="#">购物车</a></li>
+                     <li><a href="${pageContext.request.contextPath }/addCart.do">购物车</a></li>
                      <li class="divider"></li>
                      <li><a href="${pageContext.request.contextPath }/exit.do">注销</a></li>
                 </ul>
