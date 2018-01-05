@@ -170,7 +170,6 @@
 								<dt class="theme-login"><div class="cart-title">可选规格<span class="am-icon-angle-right"></span></div></dt>
 								<dd>
 									<!--操作页面-->
-
 									<div class="theme-popover-mask"></div>
 
 									<div class="theme-popover">
@@ -202,7 +201,7 @@
 														<div class="cart-title number">数量</div>
 														<dd>
 															<input id="min" class="am-btn am-btn-default" name="" type="button" value="-" />
-															<input id="text_box" name="count"  value="1" style="width:30px;" />
+															<input id="text_box" name="count" type="text" value="1" style="width:30px;" />
 															<input id="add" class="am-btn am-btn-default" name="" type="button" value="+" />
 															<span id="Stock" class="tb-hidden">库存<span class="stock">1000</span>件</span>
 														</dd>
@@ -224,19 +223,18 @@
 														<span id="Stock" class="tb-hidden">库存<span class="stock">1000</span>件</span>
 													</div>
 												</div>
-
-
-
-
+												
+											
 <div class="clearfix tb-btn tb-btn-basket theme-login">
-									<a href="${pageContext.request.contextPath }/cart.do"
-									id="LikBasket" title="加入购物车" target="_blank"><i></i>加入购物车</a>
-									<input type="submit" value="加入购物车" />
-								</div>
-
-
-
-
+	<input type="submit" value="加入购物车" class="clearfix tb-btn tb-btn-basket theme-login"/>
+</div>
+												
+												
+												
+												
+												
+												
+												
 											</form>
 										</div>
 									</div>
@@ -244,6 +242,11 @@
 								</dd>
 							</dl>
 							<div class="clear"></div>
+							
+							
+							
+							
+							
 							<!--活动	-->
 							<div class="shopPromotion gold">
 								<div class="hot">

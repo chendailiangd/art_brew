@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page import="java.util.*,dao.*,java.sql.*,com.vo.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -19,7 +20,15 @@
 	
 
 	<body>
-		<%@include file="header.jsp" %>
+	<!-- 头部 -->
+<%@include file="header.jsp" %>
+<c:forEach items="${cart.cartItems }" var = "a">
+
+${a.goods.goods_name }
+</c:forEach>
+
+
+
 
 			<!--购物车 -->
 			<div class="concent">

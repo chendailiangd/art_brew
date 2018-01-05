@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="java.util.*,dao.*,java.sql.*,com.vo.*"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <head>
     <title>艺术精酿</title>
@@ -79,12 +80,13 @@
 					<li><a class="smoothScroll" href="#about">About us</a></li>
 					<li><a class="smoothScroll" href="#skills">关于我们</a></li>
 <c:choose>
-	<c:when test="${existUser==null}">
+	<c:when test="${existUserS==null}">
 		<li><a href="${pageContext.request.contextPath}/to_login.do ">登录/注册</a></li>
 	</c:when>
 	<c:otherwise>
 		<li class="dropdown" id="accountmenu">
-             <a class="dropdown-toggle" data-toggle="dropdown" href="#">${existUser.nickname }<b class="caret"></b></a>
+		
+             <a class="dropdown-toggle" data-toggle="dropdown" href="#">${existUserS.nickname }<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                      <li><a href="#">我的订单</a></li>
                      <li><a href="${pageContext.request.contextPath }/addCart.do">购物车</a></li>
