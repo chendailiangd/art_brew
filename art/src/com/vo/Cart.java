@@ -11,15 +11,12 @@ import java.util.Map;
  */
 public class Cart {
 	private Map<Integer,CartItem> map = new LinkedHashMap<Integer, CartItem>();
-	private double total;//购物车总计
 	public Collection<CartItem> getCartItems(){
 		return map.values();//将map中所有的value返回成一个单列的集合
 	}
+	private double total;//购物车总计
 	public double getTotal() {
 		return total;
-	}
-	public void setTotal(double total) {
-		this.total = total;
 	}
 	
 	//1.清空购物车
@@ -29,9 +26,10 @@ public class Cart {
 	}
 	
 	//2.移除购物项
-	public void removeCartItem(Integer pid){
-		CartItem item =map.remove(pid);
-		total = total - item.getSubtotal();
+	public void removeCartItem(int gid){
+		System.out.println(map.get(gid));
+		CartItem item =map.remove(gid);
+		total -= item.getSubtotal(); 
 		
 	}
 	
@@ -45,6 +43,7 @@ public class Cart {
 		}else{
 			map.put(gid, cartItem);
 		}
+		total+=cartItem.getSubtotal();
 		
 		
 	}

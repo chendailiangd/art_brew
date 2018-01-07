@@ -17,6 +17,13 @@ public class Goods {
 	private String goods_publish_time;
 	private String goods_status;
 	private String goods_type;
+	private String goods_cart;
+	public String getGoods_cart() {
+		return goods_cart;
+	}
+	public void setGoods_cart(String goods_cart) {
+		this.goods_cart = goods_cart;
+	}
 	public int getGid() {
 		return gid;
 	}
