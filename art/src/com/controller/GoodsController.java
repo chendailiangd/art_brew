@@ -62,9 +62,13 @@ public class GoodsController {
 		return "cart";
 	}
 
-	
-	
-	
+	/**
+	 * 跳转至付款页面
+	 */
+	@RequestMapping("pay.do")
+	public String toPay(){
+		return "pay";
+	}
 	
 	
 	
