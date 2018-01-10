@@ -4,10 +4,12 @@
 <configuration>
     <typeAliases>
         <typeAlias alias="User" type="com.vo.User"/>
-        <typeAlias alias="User" type="com.vo.Goods"/>
+        <typeAlias alias="Goods" type="com.vo.Goods"/>
+        <typeAlias alias="Order" type="com.vo.Order"/>
     </typeAliases>
     <mappers>
         <mapper resource="com/mapper/UserMapper.xml" />
         <mapper resource="com/mapper/GoodsMapper.xml" />
+         <mapper resource="com/mapper/OrderMapper.xml" />
     </mappers>
 </configuration>

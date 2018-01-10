@@ -19,7 +19,6 @@ import com.vo.User;
 public class UserServiceImpl implements UserService{
 	@Resource
     public UserMapper userMapper;
-	HttpSession session;
 	
 	
 	/**

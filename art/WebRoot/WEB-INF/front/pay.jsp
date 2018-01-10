@@ -59,13 +59,13 @@ function checkForm(){
 						<div class="clear"></div>
 						<ul>
 							<div class="per-border"></div>
+							
+						<!-- 左边地址 -->	
 							<li class="user-addresslist defaultAddr">
-
 								<div class="address-left">
 									<div class="user DefaultAddr">
-
 										<span class="buy-address-detail">   
-                   <span class="buy-user">艾迪 </span>
+                   <span class="buy-user" name ="">艾迪 </span>
 										<span class="buy-phone">15871145629</span>
 										</span>
 									</div>
@@ -82,6 +82,8 @@ function checkForm(){
 									</div>
 									<ins class="deftip">默认地址</ins>
 								</div>
+								
+								
 								<div class="address-right">
 									<a href="${pageContext.request.contextPath}/introduction/person/address.html">
 										<span class="am-icon-angle-right am-icon-lg"></span></a>
@@ -152,7 +154,7 @@ function checkForm(){
 					</div>
 					<div class="clear"></div>
 					
-<input type="text" value="支付方式" id ="alipay" name="receiver_address"/>
+
 					<!--支付方式-->
 					<div class="logistics">
 						<h3>选择支付方式</h3>

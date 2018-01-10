@@ -19,7 +19,62 @@ public class Order {
 	private String finish_time;
 	private Double post_fee;
 	private Double coupon;
-	private Integer gid;
+	private Integer gid_one;
+	private String username;
+	private Integer gid_two;
+	private Integer gid_three;
+	private Integer gid_four;
+	private Integer gid_five;
+	private Double goods_subtotal;
+	private Double goods_total;
+	public Double getGoods_total() {
+		return goods_total;
+	}
+	public void setGoods_total(Double goods_total) {
+		this.goods_total = goods_total;
+	}
+	public Double getGoods_subtotal() {
+		return goods_subtotal;
+	}
+	public void setGoods_subtotal(Double goods_subtotal) {
+		this.goods_subtotal = goods_subtotal;
+	}
+	public Integer getGid_one() {
+		return gid_one;
+	}
+	public void setGid_one(Integer gid_one) {
+		this.gid_one = gid_one;
+	}
+	public Integer getGid_two() {
+		return gid_two;
+	}
+	public void setGid_two(Integer gid_two) {
+		this.gid_two = gid_two;
+	}
+	public Integer getGid_three() {
+		return gid_three;
+	}
+	public void setGid_three(Integer gid_three) {
+		this.gid_three = gid_three;
+	}
+	public Integer getGid_four() {
+		return gid_four;
+	}
+	public void setGid_four(Integer gid_four) {
+		this.gid_four = gid_four;
+	}
+	public Integer getGid_five() {
+		return gid_five;
+	}
+	public void setGid_five(Integer gid_five) {
+		this.gid_five = gid_five;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	public Integer getOid() {
 		return oid;
 	}
@@ -128,13 +183,7 @@ public class Order {
 	public void setCoupon(Double coupon) {
 		this.coupon = coupon;
 	}
-	public Integer getGid() {
-		return gid;
-	}
-	public void setGid(Integer gid) {
-		this.gid = gid;
-	}
-	
+
 	
 	
 	
