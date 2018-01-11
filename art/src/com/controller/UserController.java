@@ -44,7 +44,7 @@ public class UserController {
 			 	return mv;
 		 	}else if(existUser.getUser_role().equals("02")){//01代表管理员帐号，02代表普通用户
 		 		mv.addObject("existUser", existUser);
-		 		req.getSession().setAttribute("existUserS", existUser);
+		 		req.getSession().setAttribute("existUser", existUser);
 		 		
 //		 	User user1=	(User) req.getSession().getAttribute("user");
 //		 		System.out.println(user1.getNickname()+user1.getUid());

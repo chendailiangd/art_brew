@@ -24,7 +24,7 @@ public class OrderServiceImpl implements OrderService{
 	@Resource
 	public OrderMapper orderMapper;
 	
-	public void submitOrder(Order order,Cart cart) {
+	public void submitOrder(Order order,Cart cart,String username) {
 		/**
 		 * 生成订单编号
 		 */
@@ -64,13 +64,16 @@ public class OrderServiceImpl implements OrderService{
 				order.setGoods_count(cartItem.getCount());
 				//设置购物车图片
 				order.setGoods_cart(cartItem.getGoods().getGoods_cart());
+				//设置商品单价
+				order.setGoods_brew_price(cartItem.getGoods().getGoods_brew_price());
 				//设置订单生成时间
 				Date date1 =new Date();
 				SimpleDateFormat create_time =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				order.setCreate_time(create_time.format(date1));
-//				order.setUsername();
-				
-				
+				order.setUsername(username);
+				//设置订单状态，01：已提交，未付款
+				order.setOrder_status("01");
+				orderMapper.submitOrder(order);
 				}
 	
 		
@@ -96,6 +99,6 @@ public class OrderServiceImpl implements OrderService{
 		OrderServiceImpl q =new OrderServiceImpl();
 		Order order =new Order();
 		Cart cart =new Cart();
-		 q.submitOrder(order,cart);
+		 q.submitOrder(order,cart,"ccc");
 	}
 }
