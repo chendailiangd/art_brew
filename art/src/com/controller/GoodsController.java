@@ -1,20 +1,22 @@
 package com.controller;
 
 import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import com.service.GoodsService;
 import com.vo.Cart;
 import com.vo.CartItem;
 import com.vo.Goods;
+import com.vo.PageBean;
 
 @Controller
 public class GoodsController {
 	@Autowired
 	public GoodsService goodsService;
-	
 	
 	
 	/**
@@ -33,7 +35,6 @@ public class GoodsController {
 	 */
 	@RequestMapping("cart.do")
 	public String addCart(int count,int gid,HttpServletRequest req){
-//		System.out.println(count+" "+gid);
 		CartItem cartItem =new CartItem();
 		cartItem.setCount(count);//在购物项中设置从商品详情页面传过来的数量 
 		Goods goods =goodsService.findByGid(gid);//通过商品页面传过来的pid查询单个商品
@@ -70,8 +71,16 @@ public class GoodsController {
 		return "pay";
 	}
 	
-	
-	
+	/**
+	 * 跳转至所有商品页面
+	 */
+	@RequestMapping("findAllBrew.do")
+	public String findAllBrew(int currentPage,ModelMap model){
+		PageBean<Goods> pageBean =goodsService.findByCurrentPage(currentPage);
+		model.addAttribute("pageBean",pageBean);
+		
+		return null;
+	}
 	
 	
 	

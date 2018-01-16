@@ -75,8 +75,8 @@
 			  
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><a class="smoothScroll" href="${pageContext.request.contextPath }/index.do">首页 <span class="sr-only">(current)</span></a></li>
-					<li><a class="smoothScroll" href="#services">所有商品</a></li>
-					<li><a class="smoothScroll" href="#work">企业动态</a></li>
+					<li><a class="smoothScroll" href="#services">最新商品</a></li>
+					<li><a class="smoothScroll" href="${pageContext.request.contextPath }/findAllBrew.do">所有商品</a></li>
 					<li><a class="smoothScroll" href="#about">About us</a></li>
 					<li><a class="smoothScroll" href="#skills">关于我们</a></li>
 <c:choose>
@@ -88,8 +88,8 @@
 		
              <a class="dropdown-toggle" data-toggle="dropdown" href="#">${existUserS.nickname }<b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                     <li><a href="#">我的订单</a></li>
-                     <li><a href="${pageContext.request.contextPath }/addCart.do">购物车</a></li>
+                     <li><a href="${pageContext.request.contextPath }/MyOrder.do?username=${existUserS.username }">我的订单</a></li>
+                     <li><a href="${pageContext.request.contextPath }/MyCart.do">购物车</a></li>
                      <li class="divider"></li>
                      <li><a href="${pageContext.request.contextPath }/exit.do">注销</a></li>
                 </ul>

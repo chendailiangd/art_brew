@@ -4,9 +4,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+		<link href="${pageContext.request.contextPath}/introduction/css/personal.css" rel="stylesheet" type="text/css">
+		<link href="${pageContext.request.contextPath}/introduction/css/systyle.css" rel="stylesheet" type="text/css">	
+<link href="${pageContext.request.contextPath}/introduction/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
+		<link href="${pageContext.request.contextPath}/introduction/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 <%@include file="header.jsp" %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<main>
 		<section id="home">
@@ -90,33 +111,116 @@
 
 			<div class="container">
 				
-<!-- 最新商品	 -->				
-<nav class="navbar navbar-default" role="navigation">
-	<div class="container-fluid">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="#">最新商品</a>
-	</div>
-	</div>
-</nav>
+	<!--收藏夹 -->
+							<div class="you-like">
+								<div class="s-bar" align="left">最新商品
+									<a class="am-badge am-badge-danger am-round">降价</a>
+									<a class="am-badge am-badge-danger am-round">下架</a>
+									<a class="i-load-more-item-shadow" href="#"><i class="am-icon-refresh am-icon-fw"></i>换一组</a>
+								</div>
+								<div class="s-content">
+									<div class="s-item-wrap">
+										<div class="s-item">
 
-<table width="200" border="0">
+											<div class="s-pic">
+												<a href="#" class="s-pic-link">
+													<img src="${pageContext.request.contextPath}/introduction/images/0-item_pic.jpg_220x220.jpg" alt="包邮s925纯银项链女吊坠短款锁骨链颈链日韩猫咪银饰简约夏配饰" title="包邮s925纯银项链女吊坠短款锁骨链颈链日韩猫咪银饰简约夏配饰" class="s-pic-img s-guess-item-img">
+												</a>
+											</div>
+											<div class="s-price-box">
+												<span class="s-price"><em class="s-price-sign">¥</em><em class="s-value">42.50</em></span>
+												<span class="s-history-price"><em class="s-price-sign">¥</em><em class="s-value">68.00</em></span>
+
+											</div>
+											<div class="s-title"><a href="#" title="包邮s925纯银项链女吊坠短款锁骨链颈链日韩猫咪银饰简约夏配饰">包邮s925纯银项链女吊坠短款锁骨链颈链日韩猫咪银饰简约夏配饰</a></div>
+											<div class="s-extra-box">
+												<span class="s-comment">好评: 98.03%</span>
+												<span class="s-sales">月销: 219</span>
+
+											</div>
+										</div>
+									</div>
+
+									<div class="s-item-wrap">
+										<div class="s-item">
+
+											<div class="s-pic">
+												<a href="#" class="s-pic-link">
+													<img src="${pageContext.request.contextPath}/introduction/images/1-item_pic.jpg_220x220.jpg" alt="s925纯银千纸鹤锁骨链短款简约时尚韩版素银项链小清新秋款女配饰" title="s925纯银千纸鹤锁骨链短款简约时尚韩版素银项链小清新秋款女配饰" class="s-pic-img s-guess-item-img">
+												</a>
+											</div>
+											<div class="s-price-box">
+												<span class="s-price"><em class="s-price-sign">¥</em><em class="s-value">49.90</em></span>
+												<span class="s-history-price"><em class="s-price-sign">¥</em><em class="s-value">88.00</em></span>
+
+											</div>
+											<div class="s-title"><a href="#" title="s925纯银千纸鹤锁骨链短款简约时尚韩版素银项链小清新秋款女配饰">s925纯银千纸鹤锁骨链短款简约时尚韩版素银项链小清新秋款女配饰</a></div>
+											<div class="s-extra-box">
+												<span class="s-comment">好评: 99.74%</span>
+												<span class="s-sales">月销: 69</span>
+
+											</div>
+										</div>
+									</div>
+
+									<div class="s-item-wrap">
+										<div class="s-item">
+
+											<div class="s-pic">
+												<a href="#" class="s-pic-link">
+													<img src="${pageContext.request.contextPath}/introduction/images/-0-saturn_solar.jpg_220x220.jpg" alt="4折抢购!十二生肖925银女戒指,时尚开口女戒" title="4折抢购!十二生肖925银女戒指,时尚开口女戒" class="s-pic-img s-guess-item-img">
+												</a>
+											</div>
+											<div class="s-price-box">
+												<span class="s-price"><em class="s-price-sign">¥</em><em class="s-value">378.00</em></span>
+												<span class="s-history-price"><em class="s-price-sign">¥</em><em class="s-value">1888.00</em></span>
+
+											</div>
+											<div class="s-title"><a href="#" title="4折抢购!十二生肖925银女戒指,时尚开口女戒">4折抢购!十二生肖925银女戒指,时尚开口女戒</a></div>
+											<div class="s-extra-box">
+												<span class="s-comment">好评: 99.93%</span>
+												<span class="s-sales">月销: 278</span>
+
+											</div>
+										</div>
+									</div>
+									
+									
   <c:forEach items="${glist}" var="g"  varStatus="a">
-  	<tr>
-   	 	<td colspan="2"> <img alt=""  src="${pageContext.request.contextPath }/img/goods_img/c01.jpg " style="width:250px;height:230px" /> 
-		</td>
-		<td width="10" ></td>
-	</tr>
-  	<tr>
-		<td><a href="${pageContext.request.contextPath }/goods_detail.do?gid=${g.gid}">${g.goods_description }</a></td>
-		<td width="10" ></td>
-  
-  	</tr>
-  	<tr>
-   		<td width="30" height="30">danjia:999</td>
-    	<td width="30" height="30" class="service" >car</td>
-   	</tr> 
-    		</c:forEach>
- </table>  
+									<div class="s-item-wrap">
+										<div class="s-item">
+
+											<div class="s-pic">
+												<a href="#" class="s-pic-link">
+													<img src="${pageContext.request.contextPath }/img/goods_img/c01.jpg " class="s-pic-img s-guess-item-img">
+												</a>
+											</div>
+											<div class="s-price-box">
+												<span class="s-price"><em class="s-price-sign">¥</em><em class="s-value">${g.goods_brew_price }</em></span>
+												<span class="s-history-price"><em class="s-price-sign">¥</em><em class="s-value">68.00</em></span>
+
+											</div>
+											<div class="s-title"><a href="${pageContext.request.contextPath }/goods_detail.do?gid=${g.gid}" title="4折抢购!十二生肖925银女戒指,时尚开口女戒"  >${g.goods_description }</a></div>
+											<div class="s-extra-box">
+												<span class="s-comment">好评: 98.03%</span>
+												<span class="s-sales">月销: 219</span>
+
+											</div>
+										</div>
+									</div>
+</c:forEach>
+
+
+								</div>
+
+						
+				
+			
+				
+				
+				
+				
+
     
   
   <!-- <tr>

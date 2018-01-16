@@ -15,8 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.mapper.OrderMapper;
 import com.vo.Cart;
 import com.vo.CartItem;
-import com.vo.Goods;
 import com.vo.Order;
+
 
 @Service
 @Transactional
@@ -24,10 +24,10 @@ public class OrderServiceImpl implements OrderService{
 	@Resource
 	public OrderMapper orderMapper;
 	
+	
+	
 	public void submitOrder(Order order,Cart cart,String username) {
-		/**
-		 * 生成订单编号
-		 */
+		// 生成订单编号
 		Date date =new Date();
 		SimpleDateFormat sdf =new SimpleDateFormat("yyyyMMddHHmmss");
 		String middleNumber =sdf.format(date);
@@ -75,30 +75,40 @@ public class OrderServiceImpl implements OrderService{
 				order.setOrder_status("01");
 				orderMapper.submitOrder(order);
 				}
-	
-		
-		
-		
-		
-		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public static void main(String[] args) {
-		OrderServiceImpl q =new OrderServiceImpl();
-		Order order =new Order();
-		Cart cart =new Cart();
-		 q.submitOrder(order,cart,"ccc");
+	/**
+	 * 通过用户名查询我的订单
+	 */
+	public List<Order> findMyOrderByUsername(String username) {
+		List<Order> olist =orderMapper.findMyOrderByUsername(username);
+		return olist;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
 }

@@ -27,6 +27,23 @@ public class Order {
 	private Integer gid_five;
 	private Double goods_subtotal;
 	private Double goods_total;
+	private Goods goods;
+	private String goods_description;
+	
+	
+	
+	public String getGoods_description() {
+		return goods_description;
+	}
+	public void setGoods_description(String goods_description) {
+		this.goods_description = goods_description;
+	}
+	public Goods getGoods() {
+		return goods;
+	}
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
 	public Double getGoods_total() {
 		return goods_total;
 	}
