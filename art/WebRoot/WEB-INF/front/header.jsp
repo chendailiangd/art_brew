@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css"  href="${pageContext.request.contextPath}/css/gonex-icons.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 	<link href="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />	
-
+	
 		<!-- Scripts -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/libs/smooth-scroll.min.js"></script>
@@ -76,7 +76,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><a class="smoothScroll" href="${pageContext.request.contextPath }/index.do">首页 <span class="sr-only">(current)</span></a></li>
 					<li><a class="smoothScroll" href="#services">最新商品</a></li>
-					<li><a class="smoothScroll" href="${pageContext.request.contextPath }/findAllBrew.do">所有商品</a></li>
+					<li><a class="smoothScroll" href="${pageContext.request.contextPath }/findAllBrew.do?currentPage=1">所有商品</a></li>
 					<li><a class="smoothScroll" href="#about">About us</a></li>
 					<li><a class="smoothScroll" href="#skills">关于我们</a></li>
 <c:choose>

@@ -10,5 +10,13 @@
 		select * from brew_goods where gid =#{gid}
 	</select>
 	
+	<select id="findTotalcount" resultType="int">
+		select count(*) from brew_goods 
+	</select>
+	
+	<select id="findByPage" resultType="com.vo.Goods" >
+		select * from brew_goods ORDER BY goods_publish_time limit #{begin},${pageSize}
+	</select>
+	
 	
 </mapper>

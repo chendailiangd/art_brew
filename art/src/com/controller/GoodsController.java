@@ -2,6 +2,7 @@ package com.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -78,8 +79,7 @@ public class GoodsController {
 	public String findAllBrew(int currentPage,ModelMap model){
 		PageBean<Goods> pageBean =goodsService.findByCurrentPage(currentPage);
 		model.addAttribute("pageBean",pageBean);
-		
-		return null;
+		return "findAllBrew";
 	}
 	
 	
