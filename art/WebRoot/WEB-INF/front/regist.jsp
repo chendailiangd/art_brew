@@ -101,6 +101,8 @@ document.getElementById("btn").onclick=function(){time(this);}
 	
 	</head>
 	<body class="style-3">
+	<%@include file="header.jsp" %>
+	
 
 			<div class="row">
 				<div class="col-md-4 col-md-push-8">

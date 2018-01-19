@@ -20,6 +20,24 @@
         <property name="suffix" value=".jsp" />
     </bean>
     
-    
+    <!-- 拦截器的配置 -->
+	<mvc:interceptors>
+	<!-- 在 mvc:interceptors中可以配置多个拦截器 
+		多个拦截器按顺序一一执行
+	-->
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<!-- 指定拦截器的位置 -->
+			<bean class="com.util.LoginInterceptor">
+				<property name="allowedPath">
+				<list>
+					<value>login.do</value>
+					<value>index.do</value>
+					<value>toRegist.do</value>
+				</list>
+				</property>
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors> 
     
 </beans>

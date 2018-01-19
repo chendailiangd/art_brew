@@ -72,7 +72,7 @@ public class UserController {
 	/*
 	 * 跳转至用户注册页面
 	 */
-	@RequestMapping("toRegist")//可以不写.do
+	@RequestMapping("toRegist.do")//可以不写.do
 	public ModelAndView toRegist(){
 		ModelAndView mv =new ModelAndView();
 		mv.setViewName("regist");

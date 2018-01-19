@@ -14,6 +14,7 @@
 		<script src="${pageContext.request.contextPath}/introduction/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
 		<script src="${pageContext.request.contextPath}/introduction/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
 	</head>
+	<%@include file="header.jsp" %>
 	<body>
 	
 		
@@ -95,7 +96,7 @@
 	</c:if>						
 	
 	
-	<c:if test="pageBean.currentPage!=pageBean.totalPage">	
+	<c:if test="${pageBean.currentPage!=pageBean.totalPage }">	
 								<a href="${pageContext.request.contextPath }/findAllBrew.do?currentPage=${pageBean.currentPage+1  }">下一页</a>
 								<a href="${pageContext.request.contextPath }/findAllBrew.do?currentPage=${pageBean.totalPage } ">末页</a>
 	</c:if>	

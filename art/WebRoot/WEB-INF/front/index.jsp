@@ -191,7 +191,7 @@
 										<div class="s-item">
 
 											<div class="s-pic">
-												<a href="#" class="s-pic-link">
+												<a href="${pageContext.request.contextPath }/goods_detail.do?gid=${g.gid}" class="s-pic-link">
 													<img src="${pageContext.request.contextPath }/img/goods_img/c01.jpg " class="s-pic-img s-guess-item-img">
 												</a>
 											</div>
