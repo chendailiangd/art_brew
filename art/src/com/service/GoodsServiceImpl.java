@@ -1,5 +1,7 @@
 package com.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -63,6 +65,29 @@ public class GoodsServiceImpl implements GoodsService{
 		
 		pageBean.setList(list);
 		return pageBean;
+	}
+
+
+	/**
+	 * 将商品信息插入数据库
+	 */
+	public void uploadGoods(Goods goods, List<String> batchFileName) {
+		System.out.println(batchFileName);
+		if(batchFileName!=null){
+		goods.setGoods_cover_image(batchFileName.get(0));
+		goods.setGoods_introduce_image1(batchFileName.get(1));
+		goods.setGoods_introduce_image2(batchFileName.get(2));
+		goods.setGoods_introduce_image3(batchFileName.get(3));
+		goods.setGoods_introduce_image4(batchFileName.get(4));
+		goods.setGoods_introduce_image5(batchFileName.get(5));
+		goods.setGoods_introduce_image6(batchFileName.get(6));
+		
+		Date date =new Date();
+		SimpleDateFormat sdf =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		goods.setGoods_publish_time(sdf.format(date));
+		goodsMapper.uploadGoods(goods);
+		}
+		
 	}
 	
 	

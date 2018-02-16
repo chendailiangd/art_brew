@@ -3,7 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.GoodsMapper" >
 	<select id="findNewGoods" resultType="com.vo.Goods">
-		select * from brew_goods ORDER BY goods_publish_time limit 0,5
+		select * from brew_goods ORDER BY goods_publish_time desc limit 0,8 
 	</select>
 	
 	<select id="findByGid" resultType="com.vo.Goods">
@@ -15,8 +15,13 @@
 	</select>
 	
 	<select id="findByPage" resultType="com.vo.Goods" >
-		select * from brew_goods ORDER BY goods_publish_time limit #{begin},${pageSize}
+		select * from brew_goods ORDER BY goods_publish_time limit #{begin},#{pageSize}
 	</select>
 	
+	<insert id="uploadGoods">
+		insert into brew_goods (goods_description,goods_cover_image,goods_publish_time) values(#{goods_description},
+		#{goods_cover_image},#{goods_publish_time}
+		)
+	</insert>
 	
 </mapper>

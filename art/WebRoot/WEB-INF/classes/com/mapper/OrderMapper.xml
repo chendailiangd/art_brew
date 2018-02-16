@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.OrderMapper">
+	<insert id="submitOrder" parameterType="com.vo.Order">
+		insert into brew_order (order_id,order_status,goods_count,create_time,gid_one,goods_subtotal,goods_total,username
+		 ) values (#{order_id},#{order_status}, #{goods_count},#{create_time},#{gid_one},#{goods_subtotal},#{goods_total},#{username})
+	</insert>
+	
+	
+<!--  方式一：嵌套结果：使用嵌套结果映射来处理重复的联合结果的子集
+             封装联表查询的数据(去除重复的数据)
+        select * from class c, teacher t where c.teacher_id=t.t_id and c.c_id=1
+-->
+    <select id="findMyOrderByUsername"  resultMap="ClassResultMap">
+      SELECT goods_description,goods_name,order_id,order_status,goods_cart,goods_market_price,goods_brew_price,goods_count,goods_subtotal,
+goods_total,create_time
+	FROM brew_order o INNER JOIN brew_goods g 
+		on o.gid_one =g.gid 
+		where 1=1 
+		and o.username=#{username}
+    </select>
+    <!-- 使用resultMap映射实体类和字段之间的一一对应关系 -->
+    <resultMap type="com.vo.Order" id="ClassResultMap">
+        <id property="oid" column="oid"/>
+        <result property="order_id" column="order_id"/>
+        <result property="order_time" column="order_time"/>
+        <result property="order_status" column="order_status"/>
+        <result property="goods_count" column="goods_count"/>
+        <result property="receiver" column="receiver"/>
+        <result property="receiver_address" column="receiver_address"/>
+        <result property="receiver_phone" column="receiver_phone"/>
+        <result property="receive_time" column="receive_time"/>
+        <result property="create_time" column="create_time"/>
+        <result property="pay_time" column="pay_time"/>
+        <result property="sent_time" column="sent_time"/>
+        <result property="finish_time" column="finish_time"/>
+        <result property="post_fee" column="post_fee"/>
+        <result property="coupon" column="coupon"/>
+        <result property="gid_one" column="gid_one"/>
+        <result property="username" column="username"/>
+        <result property="gid_two" column="gid_two"/>
+        <result property="order_id" column="order_id"/>
+        <result property="gid_three" column="gid_three"/>
+        <result property="gid_four" column="gid_four"/>
+        <result property="gid_five" column="gid_five"/>
+        <result property="goods_subtotal" column="goods_subtotal"/>
+        <result property="goods_total" column="goods_total"/>
+        <result property="goods_description" column="goods_description"/>
+        
+        <association property="goods" javaType="com.vo.Goods">
+        	 <id property="gid" column="gid"/>
+            <result property="goods_description" column="goods_description"/>
+			<result property="goods_name" column="goods_name"/>
+			<result property="goods_cart" column="goods_cart"/>
+			<result property="goods_market_price" column="goods_market_price"/>
+			<result property="goods_brew_price" column="goods_brew_price"/>
+        </association> 
+    </resultMap>
+
+
+
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+

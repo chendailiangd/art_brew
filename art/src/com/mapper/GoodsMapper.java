@@ -14,6 +14,8 @@ public interface GoodsMapper {
 	int findTotalcount();
 
 	List<Goods> findByPage(@Param("begin") int begin, @Param("pageSize")int pageSize);
+
+	void uploadGoods(Goods goods);
 	
 
 }

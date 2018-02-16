@@ -12,6 +12,8 @@ public interface GoodsService{
 	Goods findByGid(int gid);
 
 	PageBean<Goods> findByCurrentPage(int currentPage);
+
+	void uploadGoods(Goods goods, List<String> batchFileName);
 	
 	
 }
