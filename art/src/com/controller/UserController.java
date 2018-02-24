@@ -97,7 +97,7 @@ public class UserController {
 	/*
 	 *通过邮件发送检验码
 	 */
-	@RequestMapping("sendMail")
+	@RequestMapping("sendMail.do")
 	public void sendMail(String email,HttpServletRequest req){
 		System.out.println(email);
 		String code =userService.sendMail(email);
